@@ -1,0 +1,41 @@
+        strong {
+            color: red;
+        }
+
+        .ex {
+            color: blue;
+            background-color: aliceblue;
+            /*            chartreuse;*/
+        }
+
+        #main {
+            color: saddlebrown;
+        }
+
+        a:link {
+            color: darkblue;
+        }
+
+        a:visited {
+            color: palevioletred;
+        }
+
+        a:hover {
+            color: darkcyan;
+            background-color: azure;
+        }
+
+
+        p {
+            font-family: "궁서체", "굴림체";
+            font-size: 20pt;
+            font-weight: bold;
+            text-decoration: underline;
+            line-height: 40pt;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 30pt;
+            text-shadow: 2pt 2pt 4pt;
+        }
