@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<haed>
+  <title>home</title>
+  <meta charset="UTF-8">
+</haed>
+<body>
+  <form name="ex" action="https://www.daum.net" method="post">
+    <fieldset>
+      <legend>필수 입력</legend>
+      학년 : <label for="1st">1학년</label>
+      <input type="radio" id="1st" name="grd" value="1">
+      <label for="2st">2학년</label>
+      <input type="radio" id="2st" name="grd" value="2">
+      <br>
+      입학일 : <input type="date">
+      
+      <br>
+      이메일 : <input type="email" name="email" autofocus>
+      
+      <br>
+      SNS : <input type="url" value="https://">
+      
+      <br>
+      검색 : <input type="search" placeholder="검색어를 쓰세요">
+      
+      <br>
+      나이 : <input type="number" min="19" max="40" step="1" value="20">
+      
+      <br>
+      
+      
+    </fieldset>
+    
+    
+    <fieldset>
+      <legend>선택 사항</legend>
+      색상 선택 : <input type="color">
+      <br>
+      만족도 : 1<input type="range" min="1" max="5" value="2">5
+      <br>
+      검색 : <input type="text" size="10" list="data">
+      <datalist id="data">
+        <option value="1학년" label="2023입학"></option>
+        <option value="2학년" label="2022입학"></option>
+        <option value="학위내과정" label="수시"></option>
+      </datalist>
+      
+      
+      
+    </fieldset>
+
+    <input type="submit" value="전송하기">
+    <input type="reset" value="취소하기">
+    
+  </form>
+  
+  
+  
+</body>
+</html>
