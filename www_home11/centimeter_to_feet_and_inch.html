@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>centimeter to feet and inch</title>
+</head>
+
+<body>
+  <p>센치미터를 입력하면 피트와 인치로 변환하는 프로그램(실수형)
+    (각 문항당 화면캡쳐, 소스파일)
+    1feet = 12inch, 1inch = 2.54cm</p>
+
+  <script type="text/javascript">
+    var input = parseInt(prompt("센티미터(cm)을 숫자로 입력해주세요", "123"));
+    document.write("<p>  input : " + input + "cm  </p>");
+
+    var inch = input / 2.54;
+    document.write("<p>  inch : " + inch + "inch  </p>");
+
+    var feet = inch / 12; //input / 2.54 / 12;
+
+    document.write("<p>  feet : " + feet + "ft  </p>");
+  </script>
+</body></html>
