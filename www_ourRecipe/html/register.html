@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>회원가입</title>
-  <meta charset="utf-8">
+    <title>회원가입</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_size.css" />
 </head>
 
 <body>
-  <form name="u_register" action="main.html" method="get">
-    <fieldset>
-      아이디 : <input type="text" name="u_id" placeholder="아이디를 입력하세요">
-      <br>
-      패스워드 : <input type="password" name="u_password" placeholder="패스워드를 입력하세요">
-      <br>
-      이름 : <input type="text" name="u_name" placeholder="홍길동">
-      <br>
-      생년월일 : <input type="date" name="u_birth" value="2000-01-01">
-      <br>
-      <br>
-      이메일 : <input type="email" name="u_email" placeholder="아이디@도메인명"> <button>이메일 확인</button>
-      <br>
-      인증번호 : <input type="text" name="u_emailConfirm" placeholder="인증번호를 입력해주세요">
-
-
-    </fieldset>
-
-    <input type="submit">
-    <input type="reset">
-  </form>
-  <a href="index.html"><button>뒤로가기</button></a>
+ <header>
+    <a id="logo" href="main.html" target="_self">Our Recipes</a>
+    <span class="right"><a  href="index.html" target="_self">
+      로그인</a>
+    </span>
+  </header>
+    <br>
+        <fieldset>
+    <form name="u_register" action="main.html" method="get">
+            아이디 : <input type="text" name="u_id" placeholder="아이디를 입력하세요">
+            <br>
+            패스워드 : <input type="password" name="u_password" placeholder="패스워드를 입력하세요">
+            <br>
+            이름 : <input type="text" name="u_name" placeholder="홍길동">
+            <br>
+            생년월일 : <input type="date" name="u_birth" value="2000-01-01">
+            <br>
+            <br>
+            이메일 : <input type="email" name="u_email" placeholder="아이디@도메인명"> <button>이메일 확인</button>
+            <br>
+            인증번호 : <input type="text" name="u_emailConfirm" placeholder="인증번호를 입력해주세요">
+            <br><br>
+            <input type="submit">
+            <input type="reset">
+            <br><br>
+    </form>
+            <a href="index.html"><button>뒤로가기</button></a>
+        </fieldset>
 </body></html>

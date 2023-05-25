@@ -3,18 +3,28 @@
 <head>
   <title>로그인</title>
   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="../css/style_size.css"/>
 </head>
 <body>
-  <form name="user_login" action="main.html" method="get">
+ <header>
+    <a id="logo" href="main.html" target="_self">Our Recipes</a>
+    <span class="right"><a  href="index.html" target="_self">
+      로그인</a>
+    </span>
+  </header>
+  <br>
+  <fieldset>
+ <form name="user_login" action="main.html" method="get">
     아이디 : <input type="text" name="u_id">
     <br>
     비밀번호 : <input type="password" name="u_password">
     <br>
     <input type="submit" value="로그인">
     
-  </form>
   <br><br>
+  </form>
   <a href="register.html"><button>회원가입</button></a>
+  </fieldset>
   
 </body>
 </html>

@@ -1,0 +1,97 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    background-color: orange;
+}
+
+header a{
+    text-decoration-line: none;
+}
+
+#logo {
+    padding: 20px;
+    font-size: 40px;
+    text-decoration-line: none;
+}
+
+.right {
+    float: right;
+}
+
+fieldset{
+    background-color: whitesmoke;
+    padding: 20px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    text-align: center;
+}
+form  {
+    text-align: left; 
+    display: inline-block;
+    margin: 0 auto;
+}
+nav { 
+    background-color: oldlace;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li{
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+}
+
+nav ul a {
+    text-decoration-line: none;
+}
+
+article h1 {
+    text-align: center;
+}
+
+.leco {
+    float: left;
+    width: 50%;
+}
+.rico {
+    float: right;
+    width: 50%;
+}
+
+#con1 {
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 15px 100px;
+    padding: 10px;
+    border: 5px solid;
+    float: center;
+}
+
+#con2 {
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 15px;
+    padding: 10px;
+    border: 1px;
+    float: center;
+}
+
+.picture{ 
+    height: 300px;
+    width: 400px;
+}
+
+footer {
+    clear: both;
+}

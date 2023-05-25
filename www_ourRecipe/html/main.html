@@ -3,33 +3,20 @@
 <head>
   <title>Our Recipe</title>
   <meta charset="utf-8">
-  <style>
-    nav {
-      background-color: yellow;
-      list-style-type: none;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    
-    nav li {
-      display: inline-block;
-      font-size: 20px;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="../css/style_size.css"/>
+  
 </head>
 
 <body>
-  <h1>메인</h1>
+
   <header>
     <a id="logo" href="main.html" target="_self">Our Recipes</a>
-    <span class="right">
-      회원정보
+    <span class="right"><a  href="index.html" target="_self">
+      로그인</a>
     </span>
   </header>
-<div class="menu">
-  <nav>
+
+  <nav class="menu">
     <ul>
       <a href="daily_recipe_recommend.html" target="_self">
         <li>요리추천</li>
@@ -38,7 +25,7 @@
         <li>내가 한 요리</li>
       </a>
       <a href="u_maked_recipe.html" target="_self">
-        <li>지금까지 했던 레시피</li>
+        <li>올라온 레시피</li>
       </a>
       <a href="u_like.html" target="_self">
         <li>좋아하는요리</li>
@@ -47,23 +34,26 @@
         <li>재료로 할 수 있는 요리</li>
       </a>
     </ul>
-  </nav></div>
+  </nav>
 
   <article>
     <h1>main</h1>
 
-    <section>
+    <section id="con1">
 
-      <h1>오늘의 추천요리</h1>
-      <a href="marinated_salmon.html"><img src="/images/marinated_salmon.jfif" alt="marinated_salmon">연어장</a>
-
-      <br>
-      <h3>오늘의 요리사</h3>
-      <img src="../images/developer_park.jpg" alt="developer_park" height="300px">
-      
-      <img src="../images/developer_lee.jpg" alt="developer_lee" height="300px">
-
+      <h1>오늘의 요리</h1>
+      <a href="marinated_salmon.html"><img src="../images/marinated_salmon.jfif" alt="marinated_salmon" width="500px"></a>
+      <br><h3>연어장</h3>
     </section>
+
+    <section id="con2">
+        
+      <h3>오늘의 요리사</h3>
+      <img  src="../images/developer_park.jpg" alt="developer_park" width="100px" height="100px">
+      
+      <img  src="../images/developer_lee.jpg" alt="developer_lee" width="100px" height="100px">
+    </section>      
+
   </article>
 
   <footer>
