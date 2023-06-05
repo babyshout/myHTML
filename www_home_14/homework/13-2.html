@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>13-2 요일명을 영어나 한글로 입력하면 번역하여 출력</title>
+</head>
+
+<body>
+    <h1>요일명을 영어나 한글로 입력하면 번역하여 출력하는 자바스크립트 코드</h1>
+    <script type="text/javascript">
+        var inputDay = prompt("요일명을 입력해 주세요", "");
+
+        var outputDay;
+
+//        if (inputDay == "월요일" || inputDay == "월")
+//            outputDay = "Monday";
+//        else if (inputDay == "화요일" || inputDay == "화")
+//            outputDay = "Tuesday";
+//        else if (inputDay == "수요일" || inputDay == "수")
+//            outputDay = "Wednesday";
+//        else if (inputDay == "목요일" || inputDay == "목")
+//            outputDay = "Thursday";
+//        else if (inputDay == "금요일" || inputDay == "금")
+//            outputDay = "Friday";
+//        else if (inputDay == "토요일" || inputDay == "토")
+//            outputDay = "Saturday";
+//        else if (inputDay == "일요일" || inputDay == "일")
+//            outputDay = "Sunday";
+//        else
+//            alert("잘못입력하셨습니다");
+
+        switch (inputDay) {
+            case "월요일": case "월":
+                outputDay = "Monday";
+                break;
+            case "화요일": case "화":
+                outputDay = "Tuesday";
+                break;
+            case "수요일": case "수":
+                outputDay = "Wednesday";
+                break;
+            case "목요일": case "목":
+                outputDay = "Thursday";
+                break;
+            case "금요일": case "금":
+                outputDay = "Friday";
+                break;
+            case "토요일": case "토":
+                outputDay = "Saturday";
+                break;
+            case "일요일": case "일":
+                outputDay = "Sunday";
+                break;
+            default:
+                alert("잘못입력하셨습니다");
+        }
+
+
+
+        document.write("<p>[" + inputDay + "] 를 입력하셨습니다<br>번역 결과 : " + outputDay);
+    </script>
+</body></html>
