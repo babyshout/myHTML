@@ -12,22 +12,43 @@
 
         var outputDay;
 
-//        if (inputDay == "월요일" || inputDay == "월")
-//            outputDay = "Monday";
-//        else if (inputDay == "화요일" || inputDay == "화")
-//            outputDay = "Tuesday";
-//        else if (inputDay == "수요일" || inputDay == "수")
-//            outputDay = "Wednesday";
-//        else if (inputDay == "목요일" || inputDay == "목")
-//            outputDay = "Thursday";
-//        else if (inputDay == "금요일" || inputDay == "금")
-//            outputDay = "Friday";
-//        else if (inputDay == "토요일" || inputDay == "토")
-//            outputDay = "Saturday";
-//        else if (inputDay == "일요일" || inputDay == "일")
-//            outputDay = "Sunday";
-//        else
-//            alert("잘못입력하셨습니다");
+        if (inputDay == "월요일" || inputDay == "월")
+            outputDay = "Monday";
+        else if (inputDay == "화요일" || inputDay == "화")
+            outputDay = "Tuesday";
+        else if (inputDay == "수요일" || inputDay == "수")
+            outputDay = "Wednesday";
+        else if (inputDay == "목요일" || inputDay == "목")
+            outputDay = "Thursday";
+        else if (inputDay == "금요일" || inputDay == "금")
+            outputDay = "Friday";
+        else if (inputDay == "토요일" || inputDay == "토")
+            outputDay = "Saturday";
+        else if (inputDay == "일요일" || inputDay == "일")
+            outputDay = "Sunday";
+        else if (inputDay == "Monday" || inputDay == "Mon"
+                 || inputDay == "monday" || inputDay == "mon")
+            outputDay = "월요일";
+        else if (inputDay == "Tuesday" || inputDay == "Tues"
+                 || inputDay == "tuesday" || inputDay == "tues")
+            outputDay = "화요일";
+        else if (inputDay == "Wednesday" || inputDay == "Wednes"
+                 || inputDay == "wednesday" || inputDay == "wednes")
+            outputDay = "수요일";
+        else if (inputDay == "Thursday" || inputDay == "Thurs"
+                 || inputDay == "thursday" || inputDay == "thurs")
+            outputDay = "목요일";
+        else if (inputDay == "Friday" || inputDay == "Fri"
+                 || inputDay == "friday" || inputDay == "fri")
+            outputDay = "금요일";
+        else if (inputDay == "Saturday" || inputDay == "Satur"
+                 || inputDay == "saturday" || inputDay == "satur")
+            outputDay = "토요일";
+        else if (inputDay == "Sunday" || inputDay == "Sun"
+                 || inputDay == "sunday" || inputDay == "sun")
+            outputDay = "일요일";
+        else
+            alert("잘못입력하셨습니다");
 
         switch (inputDay) {
             case "월요일": case "월":
@@ -50,6 +71,27 @@
                 break;
             case "일요일": case "일":
                 outputDay = "Sunday";
+                break;
+            case "Monday": case "Mon": case "monday": case "mon":
+                outputDay = "월요일";
+                break;
+            case "Tuesday": case "Tues": case "tuesday": case "tues":
+                outputDay = "화요일";
+                break;
+            case "Wednesday": case "Wednes": case "wednesday": case "wednes":
+                outputDay = "수요일";
+                break;
+            case "Thursday": case "Thurs": case "thursday": case "thurs":
+                outputDay = "목요일";
+                break;
+            case "Friday": case "Fri": case "friday": case "fri":
+                outputDay = "금요일";
+                break;
+            case "Saturday": case "Satur": case "saturday": case "satur":
+                outputDay = "토요일";
+                break;
+            case "Sunday": case "Sun": case "sunday": case "sun":
+                outputDay = "일요일";
                 break;
             default:
                 alert("잘못입력하셨습니다");

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배열 객체 미션</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var inputCount = parseInt(prompt("단어의 갯수를 입력해주세요(2이상)", ""));
+
+        var array = new Array(inputCount);
+
+        for (var i = 0; i < inputCount; i++) {
+            array[i] = prompt(i + "번째 단어를 입력해 주세요.", "");
+        }
+        
+        
+
+//        for (var i = 0; i < inputCount; i++) {
+//            document.write("array[" + i + "] : " + array[i] + "<br>");
+//        }
+        
+        array.sort();
+        
+        document.write("배열의 크기 : " + inputCount + "<br><br><br>오름차순 정렬" + "<br><br>배열의 내용:<br>")
+        
+        for (var i = 0; i < inputCount; i++) {
+            document.write("array[" + i + "] : " + array[i] + "<br>");
+        }
+        
+        array.reverse();
+        
+        document.write("<br><br>내림차순 정렬" + "<br><br>배열의 내용:<br>");
+        
+        for (var i = 0; i < inputCount; i++) {
+            document.write("array[" + i + "] : " + array[i] + "<br>");
+        }
+    </script>
+</body></html>

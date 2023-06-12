@@ -24,42 +24,44 @@
         function modulo(inputFirstNumber, inputSecondNumber) {
             return inputFirstNumber % inputSecondNumber;
         }
-
     </script>
 </head>
 
 <body>
     <h1>사용자로부터 숫자, 연산자, 숫자를 입력받아서 입력받은 연산자의 연산결과를 보여주는 자바스크립트 코드</h1>
+    
     <script type="text/javascript">
-        var inputFirstNumber = prompt("첫 숫자를 입력해 주세요", "");
+        var inputFirstNumber = parseFloat(prompt("첫 숫자를 입력해 주세요", ""));
         var inputOperator = prompt("연산자를 입력해 주세요", "");
-        var inputSecondNumber = prompt(inputFirstNumber + "에 " + inputOperator + " 하고싶은 숫자를 넣으세요", "");
+        var inputSecondNumber = parseFloat(prompt(inputFirstNumber + "에 " + inputOperator + " 하고싶은 숫자를 넣으세요", ""));
 
         var result;
 
-        switch (inputOperator) {
-            case "+":
-                result = add(parseFloat(inputFirstNumber), parseFloat(inputSecondNumber));
-                break;
-            case "-":
-                result = sub(inputFirstNumber, inputSecondNumber);
-                break;
-            case "*":
-                result = multiplyer(inputFirstNumber, inputSecondNumber);
-                break;
-            case "/":
-                result = divider(inputFirstNumber, inputSecondNumber);
-                break;
-            case "%":
-                result = modulo(inputFirstNumber, inputSecondNumber);
-                break;
-            default:
-                result = "err";
-        }
+        if (inputFirstNumber == NaN || inputSecondNumber == NaN)
+            result = "err";
+        
+        else
+
+            switch (inputOperator) {
+                case "+":
+                    result = add(parseFloat(inputFirstNumber), parseFloat(inputSecondNumber));
+                    break;
+                case "-":
+                    result = sub(inputFirstNumber, inputSecondNumber);
+                    break;
+                case "*":
+                    result = multiplyer(inputFirstNumber, inputSecondNumber);
+                    break;
+                case "/":
+                    result = divider(inputFirstNumber, inputSecondNumber);
+                    break;
+                case "%":
+                    result = modulo(inputFirstNumber, inputSecondNumber);
+                    break;
+                default:
+                    result = "err";
+            }
 
         document.write("<p>첫번째 숫자 : " + inputFirstNumber + "<br>연산자 : " + inputOperator + "<br>두번째 숫자 : " + inputSecondNumber + "<br><br>연산 결과 : " + result);
-
     </script>
-</body>
-
-</html>
+</body></html>

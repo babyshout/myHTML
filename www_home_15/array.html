@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta authors="임순범 박희민" />
+    <meta copyright="본 예제는 [HTML5 웹프로그래밍 입문] 교재를 이용한 교육에만 사용할 수 있음" />
+    <title> Array </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+//        var arr = new Array("one", 2, "3", 4, "five");
+//        // arr의 내용: ["one", 2, "3", 4, "five"]
+//
+//
+//        arr[100] = 100;
+//        document.write("arr[" + 100 + "]: " + arr[100] + "<br/>");
+//        document.write("length of array: " + arr.length + "<br/>");
+        
+        var std1 = new Object();
+        
+        std1.name="이수민";
+        std1.id="2320110201";
+        std1.grade="1학년";
+        
+        delete std1.grade;
+        
+        for(var i in std1) {
+//            alert(i);
+            document.write("name : " + i + "<br>"
+                          + "value : " + std1[i] + "<br><br>"
+                          )
+        }
+        
+        var std2 = new Object();
+        
+        std2.name="최준상";
+        std2.id="1231412";
+        std2.grade="1학년";
+        
+        document.write(std1 + std2);
+        
+        var arr = new Array(std2, std1);
+        
+        document.write(arr[0].name + arr[1].name);
+        
+        arr.sort((a, b) => a - b);
+        
+        document.write(arr[0].name + arr[1].name);
+
+    </script>
+</body>
+
+</html>
