@@ -1,0 +1,177 @@
+현재 발견된 문제점:
+1. 로그인 화면과 회원가입화면 input의 label부분이 다름 -> 로그인화면에선 label이 안사라지고, 회원가입화면에선 label이 이쁘게 위로올라감 ->
+해결방법 :
+	1. label을 다 밀어버리고 placeholder로 대체
+	2. 어떻게든 label을 회원가입화면처럼 이쁘게 만든다
+
+2. 전체적인 페이지에서 해당 오류가 발견됨 :
+ - 1. 노란색 경고
+DevTools failed to load source map: Could not load content for http://127.0.0.1:5500/assets/css/dashboard-free.css.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
+: /assets/css/dashboard-free.css.map 를 받아오는데 생기는 문제
+
+ - 2. 노란색 경고
+DevTools failed to load source map: Could not load content for http://127.0.0.1:5500/assets/js/_site_dashboard_free/assets/js/dashboard-free.js.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
+: /assets/js/_site_dashboard_free/assets/js/dashboard-free.js.map 를 받아오는데 생기는 문제
+
+위의 두 경고는 왜생기는지 모르겠음. 해당 파일들 모두 로컬에 존재하고, 경로또한 이상이 없음
+
+ - 3. 이건 하얀색 줄
+Event ignored due to environment being localhost : 로컬호스트에선 해당 이벤트를 무시한다는 말 같음
+
+
+3.
+Uncaught Error: no element is specified to initialize PerfectScrollbar
+    at new H (perfect-scrollbar.min.js:15:1208)
+    at material-dashboard.min.js?v=3.1.0:15:435
+    at material-dashboard.min.js?v=3.1.0:15:581
+H @ perfect-scrollbar.min.js:15
+(anonymous) @ material-dashboard.min.js?v=3.1.0:15
+(anonymous) @ material-dashboard.min.js?v=3.1.0:15
+: material-dashboard.min.js 에서 PerfectScrollbar 를 초기화 못한다는 이야기 같음
+ -> 자바스크립트 파일 살펴봤는데 공부가 부족해서 어느부분이 문제인지 보이지 않음
+ -> chatGPT한테도 물어봤는데 원론적인 얘기 (오류메시지 그대로 읽어주기)만 함. -> 오래걸릴듯
+
+
+
+--------------------------------------------------------------
+
+
+
+작업내용 (프론트)
+CSS : 
+1. 네비게이션 바 background-color 조정
+---------------------
+2. css 값이 안들어가 있는거 찾아서 채워넣음 (원본 파일에도 없어서 임의로 127 넣었음) (전체적으로 secondary 요소의 rgba의 맨앞이 비어있음)
+.btn.bg-gradient-secondary {
+  box-shadow: 0 3px 3px 0 rgba(, 128, 154, 0.15), 0 3px 1px -2px rgba(, 128, 154, 0.2), 0 1px 5px 0 rgba(, 128, 154, 0.15);
+}
+->
+.btn-secondary,
+.btn.bg-gradient-secondary {
+  box-shadow: 0 3px 3px 0 rgba(127, 128, 154, 0.15), 0 3px 1px -2px rgba(127, 128, 154, 0.2), 0 1px 5px 0 rgba(127, 128, 154, 0.15);
+}
+
+
+.btn-secondary:hover,
+.btn.bg-gradient-secondary:hover {
+  background-color: #7b809a;
+  border-color: #7b809a;
+  box-shadow: 0 14px 26px -12px rgba(, 128, 154, 0.4), 0 4px 23px 0 rgba(, 128, 154, 0.15), 0 8px 10px -5px rgba(, 128, 154, 0.2);
+}
+->
+.btn-secondary:hover,
+.btn.bg-gradient-secondary:hover {
+  background-color: #7b809a;
+  border-color: #7b809a;
+  box-shadow: 0 14px 26px -12px rgba(127, 128, 154, 0.4), 0 4px 23px 0 rgba(127, 128, 154, 0.15), 0 8px 10px -5px rgba(127, 128, 154, 0.2);
+}
+
+
+.text-bg-secondary {
+  color: #000 !important;
+  background-color: RGBA(, 128, 154, var(--bs-bg-opacity, 1)) !important;
+}
+->
+.text-bg-secondary {
+  color: #000 !important;
+  background-color: RGBA(127, 128, 154, var(--bs-bg-opacity, 1)) !important;
+}
+
+
+.dark-version .fc-theme-standard td,
+.dark-version .fc-theme-standard th {
+  border-color: rgba(, 128, 154, 0.3);
+}
+->
+.dark-version .fc-theme-standard td,
+.dark-version .fc-theme-standard th {
+  border-color: rgba(127, 128, 154, 0.3);
+}
+
+
+.bg-gradient-faded-secondary {
+  background-image: radial-gradient(370px circle at 80% 50%, rgba(, 128, 154, 0.6) 0, #626780 100%);
+}
+->
+.bg-gradient-faded-secondary {
+  background-image: radial-gradient(370px circle at 80% 50%, rgba(127, 128, 154, 0.6) 0, #626780 100%);
+}
+
+
+.bg-gradient-faded-secondary-vertical {
+  background-image: radial-gradient(200px circle at 50% 70%, rgba(, 128, 154, 0.3) 0, #7b809a 100%);
+}
+->
+.bg-gradient-faded-secondary-vertical {
+  background-image: radial-gradient(200px circle at 50% 70%, rgba(127, 128, 154, 0.3) 0, #7b809a 100%);
+}
+
+------------------------------------------
+
+3. 로그인화면 글자 시인성 향상(색상 조정)
+
+
+4. 내일 레이아웃/서식 회의 준비(권은아, 이수민 -> 레이아웃/서식 0629 저녁회의)
+  - 1. 스캔 부분은 레이아웃 크게 2가지 -> 내일 결정날듯
+
+  - 2. 세무사 채팅, 챗봇, 채팅목록 -> 레이아웃은 비슷
+
+  - 3. 캘린더 -> 재산세같은 개인적인 일정 추가 가능하게 -> 핸드폰 캘린더 앱처럼 (제일 빡셀듯)
+
+  - 4. Q&A -> 그냥 공지사항 (이협건 교수님 공지사항만들기 참고하면 좋을듯?)
+
+  - 5. 세무사 상담 -> 세무사 자신있는 부분 -> 서치(검색) 하면 별점, 후기 같은거 보이고 (배달앱처럼)
+ -> 누르면 상세정보(홍보, 소개글) , 챗봇, 연결하기 같은거 누르면 세무사 채팅으로 연결
+
+  - 6. 채팅목록 -> 내가 여태동안 세무사들이랑 채팅했던 목록들
+
+  - 7. 메인페이지 -> 우정선배말씀 : https://www.navercorp.com/ 들어가면 나오는것처럼 우리 어플리케이션에 대한 소개 메인페이지
+ -> 부트스트랩 들어가서 뽑아오면 됨.
+
+  - 8. 안에 넣어줄 컨텐츠 이쁘게 꾸미는건 html 끝내고 나서? 하면서?
+ -> 이수민 : html 안에 더미데이터 넣고 다 짜고나서 넣는게 훨씬 나을거같음 (한번에 하나만 하는게 효율 ↑)
+
+  - 9. 캘린더, 챗봇 같은것도 부트스트랩으로 가능한지?
+
+  - 10. 1번, 4번 은 만드는게 쉬워보임, 
+
+  - 11. 만들다가 힘들면 화면설계서 낼수 있을정도로만 작업하는것도 괜찮을듯 (시간)
+
+
+
+---------------------------------------------
+
+
+
+해야될거:
+!! html, css 구조 확인하기
+1. 아이디찾기/비밀번호찾기 페이지 구현(HTML) -> iframe 적용 불가능한 문제 발생
+
+2. 각 페이지별 레이아웃/서식 정하기
+
+3. 메뉴구조 어떻게 정할지
+
+
+2, 3 -> 0629일 저녁 권은아, 이수민 둘이서한 회의로 대충 윤곽은 잡았고 내일 아침에 확정하면 될것같음
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
