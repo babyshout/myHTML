@@ -1,0 +1,47 @@
+<!--scan.html 에서 사용할 기능 테스트용 html-->
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<h2>이미지 표시하기</h2>
+<form>
+  <input type="file" id="myImage" style="display: none;" onchange="displayImage()">
+  <label for="myImage" class="btn col-6">이미지 선택</label>
+</form>
+<img id="imagePreview" src="" alt="선택한 이미지" style="display: none;">
+
+<style>
+  .custom-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #337ab7;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  img[alt="선택한 이미지"] {
+    /*opacity: 0.5; !* 초기에 이미지를 비활성화합니다. *!*/
+  }
+</style>
+
+<script>
+  function displayImage() {
+    var imageInput = document.getElementById('myImage');
+    var imagePreview = document.getElementById('imagePreview');
+    var file = imageInput.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      imagePreview.src = e.target.result;
+      imagePreview.style.display = "flex";
+    };
+
+    reader.readAsDataURL(file);
+  }
+</script>
+</body>
+</html>

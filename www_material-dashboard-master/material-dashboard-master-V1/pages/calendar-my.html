@@ -1,0 +1,96 @@
+<!--calendar.html 에서 사용할 기능 테스트용-->
+
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+  <meta charset='utf-8' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+  <style>
+      body {
+          margin: 40px 0;
+          padding: 0 10px;
+      }
+      #calendar {
+          max-width: 900px;
+          margin: 0 auto;
+      }
+      .popup {
+          position: absolute;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          padding: 10px;
+          z-index: 9999;
+      }
+  </style>
+  <script>
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+              header: {
+                  left: 'prev,next today',
+                  center: 'title',
+                  right: 'month,agendaWeek,agendaDay'
+              },
+              defaultDate: new Date(),
+              navLinks: true,
+              selectable: true,
+              selectHelper: true,
+              editable: true,
+              eventLimit: true, // allow "more" link when too many events
+              events: [
+                  {
+                      title: 'Event 1',
+                      start: '2023-07-02T10:00:00',
+                      end: '2023-07-02T12:00:00',
+                      description: 'Event 1 description'
+                  },
+                  {
+                      title: 'Event 2',
+                      start: '2023-07-03T14:00:00',
+                      end: '2023-07-03T16:00:00',
+                      description: 'Event 2 description'
+                  }
+                  // 다른 이벤트들 추가 가능
+              ],
+              eventClick: function(info) {
+                  openPopup(info.event);
+              }
+          });
+
+          calendar.render();
+
+          function openPopup(event) {
+              var popupEl = document.createElement('div');
+              popupEl.classList.add('popup');
+
+              var titleEl = document.createElement('h3');
+              titleEl.textContent = event.title;
+
+              var descriptionEl = document.createElement('p');
+              descriptionEl.textContent = event.extendedProps.description;
+
+              popupEl.appendChild(titleEl);
+              popupEl.appendChild(descriptionEl);
+
+              let eventPosition = event.el.getBoundingClientRect(); // 이벤트 요소의 위치 정보 가져오기
+
+              popupEl.style.left = event.left + (event.width / 2) + 'px'; // 팝업의 가로 위치 설정
+              popupEl.style.top = event.bottom + 'px'; // 팝업의 세로 위치 설정
+
+
+              document.body.appendChild(popupEl);
+          }
+      });
+
+  </script>
+  <title>
+    calendar
+  </title>
+</head>
+<body>
+<div id='calendar'></div>
+</body>
+</html>
